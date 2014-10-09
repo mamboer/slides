@@ -4,10 +4,13 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>WebPJS - Google's new image format WebP for not supported browsers (with alpha-channel)</title>
-<style>body {font:14px/26px "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+<style>
+html,body{display:block;margin:0;padding:0;}
+body {font:14px/26px "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
 h1 {margin:20px auto 10px;}
 h2 {margin:15px auto 8px;}
 h3 {margin:10px auto 5px;}
+* {word-break:break-all; /*支持IE，chrome，FF不支持*/word-wrap:break-word;/*支持IE，chrome，FF*/}
 span {font-size:14px;/*margin-left:-5px;*/color:red;font-weight:bold}
 pre {background:#dedede; white-space: pre-wrap; word-wrap: break-word; border:1px solid #bbb; color:#070; font-weight:bold; line-height:20px; padding:7px; font-size:15px}
 .download {background:#dedede; border:1px solid #bbb; color:#070; line-height:20px; padding:7px; font-size:15px;font-weight:normal}
@@ -20,7 +23,7 @@ pre {background:#dedede; white-space: pre-wrap; word-wrap: break-word; border:1p
 a {color:#060;text-decoration:none;border-bottom:1px solid #060}
 a:hover{text-decoration:underline; border-bottom:1px solid transparent}
 .menu { width:200px; position:absolute; margin:0 10px 0 0}
-.site { padding-left:10px; border-left:1px #CCC dashed}
+.site { padding-left:9px;padding-right:10px; border-left:1px #CCC dashed}
 .menu ul { font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif; margin:0; padding:0; list-style-type:none}
 .menu li { margin:0; padding:2px 8px}
 .menu li:hover {background-color:transparent}
@@ -63,6 +66,7 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
         <img src="img/icons/ie7.webp" alt="Internet Explorer 7"/> 
         <img src="img/icons/ie8.webp" alt="Internet Explorer 8"/> 
         <img src="img/icons/ie9.webp" alt="Internet Explorer 9"/> 
+        <br/>
         <strong>最新支持</strong>: 
         <img src="img/icons/android.webp" alt="Android 2.2 and above" title="Android 2.2 and above"/> 
         <img src="img/icons/iphone.webp" alt="iPhone iOS 5 (since v0.0.2) 4, too" title="iPhone iOS 5 (since v0.0.2) 4, too"/> 
