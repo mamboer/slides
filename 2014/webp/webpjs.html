@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>WebPJS - Google's new image format WebP for not supported browsers (with alpha-channel)</title>
 <style>body {font:14px/26px "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
-h2 {margin:8px auto 5px;}
+h1 {margin:20px auto 10px;}
+h2 {margin:15px auto 8px;}
+h3 {margin:10px auto 5px;font-size:95%;}
 span {font-size:14px;/*margin-left:-5px;*/color:red;font-weight:bold}
 pre {background:#dedede; white-space: pre-wrap; word-wrap: break-word; border:1px solid #bbb; color:#070; font-weight:bold; line-height:20px; padding:7px; font-size:15px}
 .download {background:#dedede; border:1px solid #bbb; color:#070; line-height:20px; padding:7px; font-size:15px;font-weight:normal}
@@ -32,8 +34,9 @@ img{vertical-align:top;max-width:100% !important;}
 </head>
 <body>
 <div class="site">
-	<h2>WebPJS - 让所有浏览器都兼容WebP(支持半透明)</h2>
-	<div>
+	<h1>WebPJS - 让所有浏览器都兼容WebP(支持半透明)</h1>
+    <h3>使用方法</h3>
+    <div>
 		<strong>在网页中head标签内引用下面的脚本： </strong>
 		<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;js/webpjs-0.0.2.min.js&quot;&gt;&lt;/script&gt;</pre>
 		<strong>或内联以下性能优化后的脚本代码. 这段代码会判断浏览器是否支持webp格式，当不支持时才加载webpjs：</strong>
@@ -50,8 +53,8 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
 			<div class="clear"></div>
         </div>
 	</div>
-	<p>
-    	WebPJS 浏览器支持 
+    <h3>WebPJS 兼容性</h3>
+	<p> 
         <img src="img/icons/google-chrome.webp" alt="Google Chrome" title="Google Chrome"/> 
         <img src="img/icons/mozilla-firefox.webp" alt="Mozilla Firefox 3.5 and above" title="Mozilla Firefox 3.5 and above"/> 
         <img src="img/icons/safari.webp" alt="Safari (3) 4, 5" title="Safari (3) 4, 5"/> 
@@ -65,6 +68,7 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
         <img src="img/icons/iphone.webp" alt="iPhone iOS 5 (since v0.0.2) 4, too" title="iPhone iOS 5 (since v0.0.2) 4, too"/> 
         <img src="img/icons/ipad.webp" alt="iPad" title="iPad"/>
     </p>
+    <h3>示例</h3>
 	<div>
     	<strong>样式背景图: </strong><em>.webp-bg { background-image:url(&quot;img/fruit.webp&quot;); }</em>
 		<div class=webp-bg></div>
