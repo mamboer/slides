@@ -16,7 +16,11 @@
 
 		<link rel="stylesheet" href="../../assets/revealjs/css/reveal.min.css"/>
 		<link rel="stylesheet" href="../../assets/revealjs/css/theme/night.css" id="theme"/>
-
+        <link rel="stylesheet" href="../../assets/common/css/table.css"/>
+        <style>
+            .red{background:rgb(223, 117, 20) !important;color:#fff !important;}
+            .green{background:rgb(28, 184, 65) !important;color:#fff !important;}
+        </style>
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
 
@@ -55,7 +59,7 @@
 
 				<section>
                     <section>
-                        <h2>啥米?</h2>
+                        <h2>啥?</h2>
                     </section>
                     <section>
                         <h3>一种新的图片格式</h3>
@@ -74,7 +78,7 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-                        <h2>用哪?</h2>
+                        <h2>哪?</h2>
 					</section>
 					<section>
 						<h2>Chrome Webstore</h2>
@@ -89,9 +93,6 @@
 					<section>
 						<h2>淘宝&amp;天猫</h2>
 						<p>大量应用</p>
-						<a href="http://g.ald.alicdn.com/bao/uploaded/TB1OO5DGXXXXXX_XXXXwu0bFXXX.png_.webp" target="_blank" class="image">
-							<img src="http://g.ald.alicdn.com/bao/uploaded/TB1OO5DGXXXXXX_XXXXwu0bFXXX.png_.webp" alt="webp in tmall"/>
-						</a>
 					</section>
 				</section>
 
@@ -102,16 +103,56 @@
                     <section>
                         <iframe src="caniuse.html" scrolling="no" seamless="seamless" style="min-height:520px;width:100%;"></iframe>
                     </section>
+                    <section>
+                        <h3>各主流浏览器实际支持情况</h3>
+                        <div class="datagrid">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>OS\BROWSER</th>
+                                        <th>UC浏览器(9.0+)</th>
+                                        <th>QQ浏览器(5.0+)</th>
+                                        <th>Chrome浏览器(36.0+)</th>
+                                        <th>Android内置浏览器(4.0+)</th>
+                                        <th>微信内置webview</th>
+                                        <th>QQ内置webview</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>IOS</strong></td>
+                                        <td class="red">否</td>
+                                        <td class="red">否</td>
+                                        <td class="green">是</td>
+                                        <td>N/A</td>
+                                        <td class="red">否</td>
+                                        <td class="red">否</td>
+                                    </tr>
+                                    <tr class="alt">
+                                        <td><strong>Android</strong></td>
+                                        <td class="green">是</td>
+                                        <td class="green">是</td>
+                                        <td class="green">是</td>
+                                        <td class="green">是</td>
+                                        <td class="red">否</td>
+                                        <td class="red">否</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
 				</section>
 
 				<section>
-					<h2>我们手机页面里面是否值得用？</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+                    <section>
+                        <h2>用还是不用？</h2>
+                    </section> 
+                    <section>
+                        <p>
+                            <img src="img/50percent.jpg" alt="50%"/>
+                        </p>
+                        <p>大约50%的用户收益，另外50%的用户需要兼顾处理</p>
+                    </section>
 				</section>
 
 				<section>
