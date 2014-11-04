@@ -20,6 +20,10 @@
         <style>
             .red{background:rgb(223, 117, 20) !important;color:#fff !important;}
             .green{background:rgb(28, 184, 65) !important;color:#fff !important;}
+            .reveal .hl {color:#e7ad52;font-size:105%;font-style:normal;font-weight:500;}
+            .hl-01{}
+            .hl-02{}
+            .hl-03{}
         </style>
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
@@ -54,9 +58,31 @@
 					</p>
 				</section>
 
-				<section>
+                <section>
+                    <h1>About Me</h1>
+                    <ol>
+                        <li class="fragment"><p>老黄、LV、驴哥、小悠</p></li>
+                        <li class="fragment"><p>从事码农<em class="hl hl-03">13</em>年</p></li>
+                        <li class="fragment"><p>务农（种田<em class="hl hl-01">5</em>年）：初中3年+高1高2</p></li>
+                        <li class="fragment"><p>编码（<em class="hl hl-02">8</em>年。Html,Css,Js,NodeJs,C#,Java,Swift...）：2006 ~ 至今</p></li>
+                        <li class="fragment"><p>@腾讯互娱/TGIdeas创意设计中心</p></li>
+                        <li class="fragment"><p><a href="http://faso.me" target="_blank">faso.me</a> &amp; <a href="http://github.com/mamboer" target="_blank">github.com/mamboer</a></p></li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h1>Agenda</h1>
+                    <ol>
+                        <li><p><a href="#/3">什么东西？</a></p></li>
+                        <li><p><a href="#/4">谁在用？</a></p></li>
+                        <li><p><a href="#/5">兼容性怎样？</a></p></li>
+                        <li><p><a href="#/6">怎么用？</a></p></li>
+                    </ol>
+                </section>
+
+				<section id="what">
                     <section>
-                        <h2>啥?</h2>
+                        <h2>什么东西?</h2>
                     </section>
                     <section>
                         <h3>一种新的图片格式</h3>
@@ -73,9 +99,9 @@
 				</section>
 
 				<!-- Example of nested vertical slides -->
-				<section>
+				<section id="whoAndWhere">
 					<section>
-                        <h2>哪?</h2>
+                        <h2>谁在用?</h2>
 					</section>
 					<section>
 						<h2>Chrome Webstore</h2>
@@ -93,7 +119,7 @@
 					</section>
 				</section>
 
-				<section>
+				<section id="compatibility">
 					<section>
                         <h2>兼容性？</h2>
                     </section>
@@ -138,23 +164,47 @@
                             </table>
                         </div>
                     </section>
+                    <section>
+                        <h3>兼容性结论</h3>
+                        <p>从设备\操作系统\浏览器的角度看，兼容性达<em class="hl">50%</em></p>
+                    </section>
 				</section>
 
-				<section>
+
+				<section id="how">
                     <section>
                         <h2>那么问题来了？到底用还是不用呢</h2>
-                    </section> 
+                    </section>
                     <section>
-                        <p>
-                            <img src="img/50percent.jpg" alt="50%"/>
-                        </p>
-                        <p>大约50%的用户受益，另外50%的用户需要兼顾处理</p>
+                        <h3>这是一个没有标准答案的问题</h3>
+                        <p class="fragment">但，有一些业务相关的数据可以参考</p>
+                    </section>
+                    <section>
+                        <h3>国内移动端浏览器上一季度市场份额</h3>
+                        <p>UC浏览器+Chrome浏览器市场份额接近70%，对webp兼容良好</p>
+                        <img src="img/StatCounter-browser-CN-monthly-201407-201409-bar.jpg" alt="移动端浏览器市场份额201407-09"/>
+                    </section>
+                    <section>
+                        <h3>天天飞车官网上一季度 - 操作系统市场份额</h3>
+                        <p>Android系统的访问量超过<em class="hl">70%</em></p>
+                        <img src="img/ttfc-os-chart.png" alt="天天飞车操作系统市场份额201410"/>
+                    </section>
+                    <section>
+                        <h2>说明什么问题？</h2>
+                        <ol>
+                            <li>
+                                <p>如果用webp，大约<em class="hl">50%</em>的用户受益，另外<em class="hl">50%</em>的用户需要兼顾处理</p>
+                            </li>
+                            <li>
+                                如果图片大小占据页面大小一半或以上，做webp兼容的收益还是相当可观的。
+                            </li>
+                        </ol>
                     </section>
 				</section>
 
 				<section>
                     <section>
-					    <h2>如何兼顾不支持webp的浏览器？</h2>
+					    <h2>那么问题又来了？如何兼顾不支持webp的浏览器？</h2>
                     </section>
                     <section>
                         <h3>按需加载，优雅降级</h3>
@@ -174,50 +224,22 @@
                         <h3>如何判断浏览器是否支持webp？</h3>
                         <pre>
                             <code data-trim>
-(function() {
-
-  if (this.WebP) return;
-  this.WebP = {};
-
-  WebP._cb = function(isSupport, _cb) {
-    this.isSupport = function(cb) {
-      cb(isSupport);
-    };
-    _cb(isSupport);
-    if (window.chrome || window.opera && window.localStorage) {
-      window.localStorage.setItem("webpsupport", isSupport);
-    }
-  };
-
-  WebP.isSupport = function(cb) {
-    if (!cb) return;
-    if (!window.chrome && !window.opera) return WebP._cb(false, cb);
-    if (window.localStorage && window.localStorage.getItem("webpsupport") !== null) {
-      var val = window.localStorage.getItem("webpsupport");
-      WebP._cb(val === "true", cb);
-      return;
-    }
     var img = new Image();
     img.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
     img.onload = img.onerror = function() {
-      WebP._cb(img.width === 2 && img.height === 2, cb);
+      if(img.width === 2 && img.height === 2){
+          //支持webp    
+      }else{
+          //不支持webp
+      };
     };
-  };
-
-  WebP.run = function(cb) {
-    this.isSupport(function(isSupport) {
-      if (isSupport) cb();
-    });
-  };
-
-})();
-                            </code>
+                           </code>
                         </pre>
                     </section>
                     <section>
                         <h3>按需加载的优缺点</h3>
                         <ul>
-                            <li>优点：特别适用于内容图较多较大的手机页面，可以让大约50%的用户显著提升图片加载速度，较少流量消耗</li>
+                            <li>优点：特别适用于内容图较多较大的手机页面，可以让大约<em class="hl">50%</em>的用户显著提升图片加载速度，较少流量消耗</li>
                             <li>缺点：需要为按需加载的图片准备一套webp格式的</li>
                         </ul>
                     </section>
@@ -270,7 +292,8 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
                         </ul>
                     </section>
                     <section>
-                        <h3>WebPJS并不是银弹，Google出品也不一定是精品~</h3>
+                        <h3>WebPJS并不是银弹</h3>
+                        <h4>Google出品也不一定是精品~</h4>
                     </section>
                 </section>
 
@@ -288,17 +311,17 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
                 </section>
                 <section>
                     <section>
-                        <h2>2个好东西</h2>
+                        <h2>2个小广告</h2>
                     </section>
                     <section>
                         <h3>grunt-webp</h3>
                         <p>一个将普通图片转换成webp图片的nodejs包</p>
-                        <p><a href="https://www.npmjs.org/package/grunt-webp" target="_blank">想了解grunt-webp请猛击这里！</a></p>
+                        <img src="img/qrcode-grunt-webp.png" alt="grunt-webp"/>
                     </section>
                     <section>
                         <h3>LazyPic.JS</h3>
                         <p>一个支持webp图片的延迟加载组件</p>
-                        <p><a href="http://faso.me/lazypic" target="_blank">想要了解更多关于LazyPic的信息，请点我~</a></p>
+                        <img src="img/qrcode-lazypic.png" alt="lazypic.js"/>
                     </section>
                 </section>
 				<section>
