@@ -14,16 +14,17 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-		<link rel="stylesheet" href="../../assets/revealjs/css/reveal.min.css"/>
+		<link rel="stylesheet" href="../../assets/common/css/font-Limelight.css"/>
+        <link rel="stylesheet" href="../../assets/revealjs/css/reveal.min.css"/>
 		<link rel="stylesheet" href="../../assets/revealjs/css/theme/night.css" id="theme"/>
         <link rel="stylesheet" href="../../assets/common/css/table.css"/>
         <style>
+            .reveal {font-family:"Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;}
+            .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{font-family:'Limelight';}
+            .reveal h1{margin-bottom:25px;}
             .red{background:rgb(223, 117, 20) !important;color:#fff !important;}
             .green{background:rgb(28, 184, 65) !important;color:#fff !important;}
             .reveal .hl {color:#e7ad52;font-size:105%;font-style:normal;font-weight:500;}
-            .hl-01{}
-            .hl-02{}
-            .hl-03{}
         </style>
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
@@ -52,19 +53,14 @@
 			<div class="slides">
                 <section>
 					<h1>WebP</h1>
-                    <h3>Can i use it?</h3>
-					<p>
-                    <small>Updated by <a href="http://faso.me" target="_blank">LV</a> at 17th Oct. 2014</small>
-					</p>
 				</section>
 
                 <section>
                     <h1>About Me</h1>
                     <ol>
                         <li class="fragment"><p>老黄、LV、驴哥、小悠</p></li>
-                        <li class="fragment"><p>从事码农<em class="hl hl-03">13</em>年</p></li>
-                        <li class="fragment"><p>务农（<em class="hl hl-01">5</em>年）</p></li>
-                        <li class="fragment"><p>编码（<em class="hl hl-02">8</em>年。Html,Css,Js,NodeJs,C#,Java,Swift...）：2006 ~ 至今</p></li>
+                        <li class="fragment"><p>码农（<em class="hl hl-02">8</em>年。Html、Css、Js、NodeJs、C#、Java、Swift...）</p></li>
+                        <li class="fragment"><p>搜狐MDC、百度知道、腾讯ISUX、腾讯ECD</p>
                         <li class="fragment"><p>@腾讯互娱/TGIdeas创意设计中心</p></li>
                         <li class="fragment"><p><a href="http://faso.me" target="_blank">faso.me</a> &amp; <a href="http://github.com/mamboer" target="_blank">github.com/mamboer</a></p></li>
                     </ol>
@@ -73,16 +69,19 @@
                 <section>
                     <h1>Agenda</h1>
                     <ol>
-                        <li><p><a href="#/3">什么东西？</a></p></li>
-                        <li><p><a href="#/4">谁在用？</a></p></li>
-                        <li><p><a href="#/5">兼容性怎样？</a></p></li>
-                        <li><p><a href="#/6">怎么用？</a></p></li>
+                        <li><p><a href="#/3">是什么?</a></p></li>
+                        <li><p><a href="#/4">谁在用?</a></p></li>
+                        <li><p><a href="#/5">兼容性?</a></p></li>
+                        <li><p><a href="#/6">用还是不用?</a></p></li>
+                        <li><p><a href="#/7">怎么用?</a></p></li>
+                        <li><p><a href="#/12">性能?</a></p></li>
+                        <li><p><a href="#/13">工具推荐</a></p></li>
                     </ol>
                 </section>
 
 				<section id="what">
                     <section>
-                        <h2>什么东西?</h2>
+                        <h2>是什么?</h2>
                     </section>
                     <section>
                         <h3>一种新的图片格式</h3>
@@ -96,6 +95,21 @@
                     <section>
                         <h3>有损压缩（同质JPG，尺寸小25~34%）</h3>
                     </section>
+                    <section>
+                        <h3>更吊的图像编码技术</h3>
+                        <ul>
+                            <li>Fancy采样算法</li>
+                            <li>区域智能压缩</li>
+                            <li>预测编码技术</li>
+                        </ul>
+                        <aside class="notes">
+                            <ol>
+                                <li>可有效降低图片内色彩边缘的像素</li>
+                                <li>同一张图片里的不同区域进行不同形式的压缩，在图片质量和图片大小上实现最佳平衡</li>
+                                <li>通过部分像素块的颜色来预测其邻近块的颜色值，并只记录两者的差值，提高压缩比</li>
+                            </ol>  
+                        </aside>
+                    </section>
 				</section>
 
 				<!-- Example of nested vertical slides -->
@@ -106,22 +120,25 @@
 					<section>
 						<h2>Chrome Webstore</h2>
                         <p>
-                            全站90%图片应用webp
+                            全站应用webp
                         </p>
+                        <img src="img/webstore.png" alt="webstore"/>
 					</section>
 					<section>
 						<h2>QZone</h2>
-						<p>少量应用</p>
+						<p>部分应用：大背景、动态里面的照片</p>
+                        <img src="img/qzone.png" alt="qzone"/>
 					</section>
 					<section>
 						<h2>淘宝&amp;天猫</h2>
-						<p>部分应用</p>
+						<p>部分应用：列表页</p>
+                        <a href="http://www.taobao.com/market/nvzhuang/xinpin-kaishan.php?spm=a217f.1217951.1998072001.1.HrZH9n" target="_blank"><img src="img/taobao.png" alt="taobao"/></a>
 					</section>
 				</section>
 
 				<section id="compatibility">
 					<section>
-                        <h2>兼容性？</h2>
+                        <h2>兼容性?</h2>
                     </section>
                     <section>
                         <iframe src="caniuse.html" scrolling="no" seamless="seamless" style="min-height:520px;width:100%;"></iframe>
@@ -173,11 +190,17 @@
 
 				<section id="how">
                     <section>
-                        <h2>那么问题来了？到底用还是不用呢</h2>
+                        <h3>那么问题来了?</h3>
+                        <h2>到底用还是不用呢</h2>
                     </section>
                     <section>
                         <h3>这是一个没有标准答案的问题</h3>
-                        <p class="fragment">但，有一些业务相关的数据可以参考</p>
+                        <p class="fragment">但，有一些数据和建议可以参考</p>
+                    </section>
+                    <section>
+                        <h3>国内桌面浏览器上一季度市场份额</h3>
+                        <p>Chrome浏览器49%+，对webp兼容良好</p>
+                        <img src="img/StatCounter-browser-CN-monthly-201407-201409-bar1.jpg" alt="桌面浏览器市场份额201407-09"/>
                     </section>
                     <section>
                         <h3>国内移动端浏览器上一季度市场份额</h3>
@@ -192,19 +215,22 @@
                     <section>
                         <h2>说明什么问题？</h2>
                         <ol>
-                            <li>
-                                <p>如果用webp，大约<em class="hl">50%</em>的用户受益，另外<em class="hl">50%</em>的用户需要兼顾处理</p>
+                            <li class="fragment">
+                                <p>如果用webp，大约<em class="hl">50%</em>用户受益，当然另外<em class="hl">50%</em>用户需要兼顾处理</p>
                             </li>
-                            <li>
-                                如果图片大小占据页面大小一半或以上，做webp兼容的收益还是相当可观的。
+                            <li class="fragment">
+                                如果图片大小占据页面大小一半或以上，<em class="hl">【建议用！】</em>
                             </li>
+                            <li class="fragment">客户端软件，内嵌了基于Chromium的webview，<em class="hl">【必须用！】</em></li>
+                            <li class="fragment">客户端软件，如果使用node-webkit开发，<em class="hl">【必须用！】</em></li>
                         </ol>
                     </section>
 				</section>
 
 				<section>
                     <section>
-					    <h2>那么问题又来了？如何兼顾不支持webp的浏览器？</h2>
+					    <h3>那么问题又来了?</h3>
+                        <h2>如何兼顾不支持webp的浏览器?</h2>
                     </section>
                     <section>
                         <h3>按需加载，优雅降级</h3>
@@ -242,7 +268,7 @@
                     <section>
                         <h3>按需加载的优缺点</h3>
                         <ul>
-                            <li>优点：特别适用于内容图较多较大的手机页面，可以让大约<em class="hl">50%</em>的用户显著提升图片加载速度，较少流量消耗</li>
+                            <li>优点：特别适用于内容图较多较大的页面，可以让大约<em class="hl">50%</em>的用户显著提升图片加载速度，较少流量消耗</li>
                             <li>缺点：需要为按需加载的图片准备一套webp格式的</li>
                         </ul>
                     </section>
@@ -296,7 +322,7 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
                     </section>
                     <section>
                         <h3>WebPJS并不是银弹</h3>
-                        <h4>Google出品也不一定是精品~</h4>
+                        <h4>舍本求末,Google出品不一定是精品</h4>
                     </section>
                 </section>
 
@@ -311,11 +337,46 @@ WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0
                 </section>
                 <section>
                     <h2>结束了</h2>
-                    <h2 class="fragment">嘛？</h2>
+                    <h2 class="fragment">么？</h2>
                 </section>
                 <section>
                     <section>
-                        <h2>3个小工具</h2>
+                        <h2>聊聊webp的性能</h3>
+                    </section>
+                    <section>
+                        <h3>编码(Encode)和解码(Decode)速度</h3>
+                        <ol style="margin-bottom:30px;">
+                            <li>编码速度比JPG慢大约<em class="hl">10倍</em></li>
+                            <li>解码速度比JPG慢大约<em class="hl">1.4倍</em></li>
+                        </ol>
+                        <blockquote style="font-size:80%;" cite="http://www.tuicool.com/articles/FFZ73y">数据参考自:<a href="http://www.tuicool.com/articles/FFZ73y" target="_blank">Faster, smaller and more beautiful web with WebP</a></blockquote>
+                    </section>
+                    <section>
+                        <h3>解码慢1.4倍,对页面渲染影响大否?</h3>
+                    </section>
+                    <section>
+                        <h3>渲染速度测试 - PC端</h3>
+                        <video data-autoplay src="img/video.mp4"></video>
+                    </section>
+                    <section>
+                        <h3>渲染速度测试 - PC端</h3>
+                        <img src="img/visual-progress.png" alt="progress"/> 
+                    </section>
+                    <section>
+                        <h3>尺寸对比测试</h3>
+                        <img src="img/bytes.png" alt="bytes"/>
+                    </section>
+                    <section>
+                        <h3>说明什么问题?</h3>
+                        <ul>
+                            <li>尽管webp解码速度比JPG慢1.4陪,但实际<em class="hl">渲染速度不慢</em></li>
+                            <li>大多数情况下Google还是靠谱的,请<em class="hl">放心使用webp</em></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Bonus-3个小工具</h2>
                     </section>
                     <section>
                         <h3>1. grunt-webp</h3>
@@ -385,7 +446,14 @@ new LazyPic();
 					<blockquote cite="http://zhitu.tencent.com">
 						&ldquo;智图(zhitu)&rdquo;
 					</blockquote>
-				</section>
+				    <blockquote cite="http://www.webpagetest.org/video/compare.php?tests=141121_NG_6MW,141121_N5_4ZH">
+                        &ldquo;<a href="http://www.webpagetest.org/video/compare.php?tests=141121_NG_6MW,141121_N5_4ZH" target="_blank">渲染速度对比测试(webpagetest.org)</a>&rdquo;
+                    </blockquote>
+
+				    <blockquote cite="http://www.webpagetest.org/video/compare.php?tests=141121_3W_JT7,141121_6Q_JSM">
+                        &ldquo;<a href="http://www.webpagetest.org/video/compare.php?tests=141121_3W_JT7,141121_6Q_JSM" target="_blank">渲染速度对比测试-手机端(webpagetest.org)</a>&rdquo;
+                    </blockquote>
+                </section>
 			</div>
 
 		</div>
