@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"/>
+
+		<title>FASO - Githuber</title>
+
+		<meta name="description" content="《Githuber》，Github使用简明教程Webp"/>
+		<meta name="author" content="FASO.ME"/>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+		<link rel="stylesheet" href="../../assets/common/css/font-Limelight.css"/>
+        <link rel="stylesheet" href="../../assets/revealjs/css/reveal.min.css"/>
+		<link rel="stylesheet" href="../../assets/revealjs/css/theme/simple.css" id="theme"/>
+        <link rel="stylesheet" href="../../assets/common/css/table.css"/>
+        <style>
+            /*.reveal {font-family:"Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;}*/
+            .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{font-family:'Limelight';}
+            .reveal h1{margin-bottom:50px;}
+            .reveal h2{margin-bottom:40px;}
+            .reveal h3{margin-bottom:25px;}
+            .red{background:rgb(223, 117, 20) !important;color:#fff !important;}
+            .green{background:rgb(28, 184, 65) !important;color:#fff !important;}
+            .reveal .hl {color:#e91e63;font-size:105%;font-style:normal;font-weight:500;}
+            .logo{border-radius:50%;}
+            .lite-img img{border:none!important;box-shadow:none!important;}
+            .reveal .h3-badage{display:inline-block;width:80px;height:80px;line-height:80px;text-align:center;border-radius:50%;border:4px solid #333;box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);}
+        </style>
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../../assets/revealjs/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../../assets/revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+                    <img src="http://xtutor.github.io/githuber/assets/img/githuber.png" alt="githuber" width="120" height="120" class="logo"/>
+					<h1>Github-ER</h1>
+				</section>
+
+                <section>
+                    <h2>About Me</h2>
+                    <ol>
+                        <li><p>老黄&sstarf;LV&sstarf;驴哥&sstarf;小悠&sstarf;大黄兄</p></li>
+                        <li><p>前后端开发8年</p></li>
+                        <li><p>@腾讯互娱/TGIdeas创意设计中心</p></li>
+                        <li><p><a href="http://faso.me" target="_blank">faso.me</a> &amp; <a href="http://github.com/mamboer" target="_blank">github.com/mamboer</a></p></li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Agenda</h2>
+                    <ol>
+                        <li><p><a href="#/3">背景</a></p></li>
+                        <li><p><a href="#/4">好处</a></p></li>
+                        <li><p><a href="#/5">基本功能</a></p></li>
+                        <li><p><a href="#/6">准备工作</a></p></li>
+                        <li><p><a href="#/7">Git的基本命令</a></p></li>
+                        <li><p><a href="#/">Git的工作流</a></p></li>
+                        <li><p><a href="#/">搭建Github站点</a></p></li>
+                    </ol>
+                </section>
+
+				<section>
+                    <section>
+                        <h2>背景</h2>
+                    </section>
+                    <section>
+                        <h3>全球最大</h3>
+                        <p>开源社交编程及代码托管网站</p>
+                    </section>
+                    <section>
+                        <h3>2006年</h3>
+                        <p>jQuery</p>
+                    </section>
+                    <section>
+                        <h3>2008年</h3> 
+                        <p>Github Inc.正式成立</p>
+                    </section>
+                    <section>
+                        <h3>2013年</h3>
+                        <ul>
+                            <li>新用户注册数超过<em class="hl">300万</em></li>
+                            <li>中国用户数居<em class="hl">第三位</em></li>
+                            <li>总项目数超过<em class="hl">1000万</em></li>
+                            <li><em class="hl hl-02">1.5亿</em>多次的代码推送</li>
+                    </section>
+                    <section>
+                        <h3>百度系</h3>
+                        <ul>
+                            <li><a href="https://github.com/fex-team/fis" target="_blank">F.I.S</a></li>
+                            <li><a href="https://github.com/BaiduFE/Tangram2" target="_blank">tangram</a></li>
+                            <li><a href="https://github.com/Clouda-team" target="_blank">clouda+</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>阿里系</h3>
+                        <ul>
+                            <li><a href="https://github.com/seajs/seajs" target="_blank">seajs</a></li>
+                            <li><a href="https://github.com/kissyteam/kissy" target="_blank">kissy</a></li>
+                            <li><a href="https://github.com/aliceui/aliceui.org" target="_blank">aliceui</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>鹅厂</h3>
+                        <ul>
+                            <li><a href="https://github.com/tgideas/motion" target="_blank">Motion.JS</a></li>
+                            <li><a href="https://github.com/frozenui/frozenui" target="_blank">FrozenUI</a></li>
+                            <li><a href="https://github.com/oklai/koala" target="_blank">koala</a></li>
+                        </ul>
+                    </section>
+				</section>
+
+				<section class="lite-img">
+					<section>
+                        <h2>好处?</h2>
+					</section>
+					<section>
+                        <h3><span class="h3-badage">潮</span></h3>
+                        <p>
+                        找组件、找源码</p>
+                        <p>全世界都在Github的时候</p>
+                        <p>岂能默默的百度
+                        </p>
+                        <img src="img/fasion.png" alt="fasion"/>
+					</section>
+					<section>
+                        <h3><span class="h3-badage">术</span></h3>
+                        <p>关注和使用开源项目</p>
+                        <p>在Github上和大神们交流</p>
+                        <img src="img/strong.jpg" alt="strong"/>
+					</section>
+					<section>
+                        <h3><span class="h3-badage">逼</span></h3>
+                        <p><em class="hl">路人</em>：Motion的slide组件怎么用？</p>
+                        <p><em class="hl">波波</em>：Github上面有详细的API文档哦！</p>
+                        <p>(头也不回，继续撸啊撸)</p>
+					    <img src="img/bi.jpg" alt="bi" />
+                    </section>
+				</section>
+
+				<section class="lite-img">
+					<section>
+                        <h2>Github的基本功能?</h2>
+                    </section>
+                    <section>
+                        <h3>基本功能</h3>
+                        <ol>
+                            <li>源码项目（Repository）</li>
+                            <li>源码片段（Gist）</li>
+                            <li>站点（Github Pages）</li>
+                            <li>API</li>
+                            <li>个人中心（User）</li>
+                            <li>组织（Organization）</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <img src="http://xtutor.github.io/githuber/assets/img/features.png" alt="features" />
+                    </section>
+                    <section><h3>怎么用？</h3></section>
+				</section>
+
+
+				<section class="lite-img">
+                    <section>
+                        <h2>准备工作</h2>
+                    </section>
+                    <section>
+                        <h3>创建Github账户</h3>
+                        <p>具体注册过程略。（讲义第3章）</p>
+                    </section>
+                    <section>
+                        <h3>创建组织</h3>
+                        <p>和创建账户类似，略。（讲义第4章）</p>
+                    </section>
+                    <section>
+                        <h3>Windows下搭建Git客户端</h3>
+                        <p>去<a href="https://msysgit.github.io/" target="_blank">msysgit.github.io</a>下载和安装msysgit</p>
+                        <img src="http://xtutor.github.io/githuber/assets/img/gitbash.png" alt="gitbash"/>
+                    </section>
+                    <section>
+                        <h3>Mac系统下搭建Git客户端</h3>
+                        <p>
+                        <ol>
+                            <li>安装homebrew，参考<a href="http://brew.sh" target="_blank">brew.sh</a></li>
+                            <li>
+                                安装git
+                                <pre><code data-trim>
+                                brew install git
+                                </code></pre>
+                            </li>
+                        </ol>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>验证Git是否安装正确</h3>
+                        <p>
+                            <pre><code data-trim>
+                            git --version
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>了解Git与Github的通讯协议</h3>
+                        <ul>
+                            <li>
+                                <p>Github支持的两种协议：</p>
+                                <p>
+                                    <ol>
+                                        <li>https协议</li>
+                                        <li><em class="hl">ssh协议</em></li>
+                                    </ol>
+                                </p>
+                            </li>
+                            <li>
+                                <p>参考文章：<a href="http://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE">Git协议</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Github的SSH Key配置</h3>
+                        <p>
+                            参考详尽的配置步骤（讲义第6章）
+                        </p>
+                    </section>
+                    <section>
+                        <h3>proxifier的使用</h3>
+                        <ol>
+                            <li>下载和安装proxifier</li>
+                            <li>
+                                添加规则：
+                                <pre><code data-trim>
+                                ssh;git*;
+                                </code></pre>
+                            </li>
+                        </ol>
+                    </section>
+				</section>
+
+				<section class="lite-img">
+                    <section>
+                        <h2>Practice - 创建项目</h2>
+                    </section>
+                    <section>
+                        <h3>方式1 - Fork</h3>
+                        <img src="http://xtutor.github.io/githuber/assets/img/fork.png" alt="fork" />
+                    </section>
+                    <section>
+                        <h3>方式2 - 创建新的项目</h3>
+                        <img src="http://xtutor.github.io/githuber/assets/img/newproj.png" alt="new proj" />
+                    </section>
+                    <section>
+                        <h3>Pull Request</h3>
+                        <img src="http://xtutor.github.io/githuber/assets/img/pullrequest.png" alt="pull request" />
+                        <aside class="notes">
+                        『我在你代码的基础上开发了些新功能，你看看要不要将它们合到你的代码中去』。
+                        </aside>
+                    </section>
+                </section>
+
+				<section>
+					<section>
+                        <h2>Practice - 基本的Git命令</h2>
+                    </section>
+				    <section>
+                        <h3>1. clone</h3>
+                        <p>拷贝项目至本地电脑</p>
+                        <pre><code data-trim>
+# ssh协议
+git clone git@github.com:tgideas/motion.git
+
+# https协议
+git clone https://github.com/tgideas/motion.git
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>clone之后的3颗『树』</h3>
+                        <img src="http://xtutor.github.io/githuber/assets/img/tree.png" alt="tree" />
+                        <p>项目拷贝本地后，其文件结构由Git维护的三颗『树』组成</p>
+                    </section>
+                    <section>
+                        <h3>2. checkout</h3>
+                        <p>签出指定分支或文件</p>
+                        <pre><code data-trim>
+#签出指定文件
+git checkout index.html
+
+#签出gh-pages分支
+git checkout gh-pages
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>3. add</h3>
+                        <p>将文件操作记录保存至暂存区（索引区）</p>
+                        <pre><code data-trim>
+# 索引某个文件
+git add 文件名
+                                            
+# 索引txt结尾的文件
+git add *.txt
+
+# 索引当前目录下所有未索引的文件，包括已被删除的
+git add -A
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>4. rm</h3>
+                        <p>与add命令相反，从暂存区移除记录</p>
+                        <pre><code data-trim>
+# 移除指定文件及其索引信息，如果被移除的文件不是服务器端最新版本的文件则会报错
+git rm 文件名
+
+# 开关-f 
+# 强制移除指定文件及其索引信息，不管是否服务器端最新版本的文件
+git rm -f 文件名
+
+# 强制递归移除指定目录
+git rm -rf 目录名
+
+# 开关--cached
+# 仅仅删除文件的索引信息，保留文件在当前目录位置。相当于告诉git：当前被移除的文件不再做版本控制。
+git rm --cached 文件名                        
+                        </code></pre>
+                    </section>
+
+				</section>
+
+				<section>
+				    <section>
+                        <h2>
+                            WebPJS
+                        </h2>
+                        <p>借助FLASH兼容不支持webp的浏览器</p>
+                    </section>
+                    <section>
+                        <h3>步骤1 - 下载所需文件-webpjs.appspot.com</h3>
+                        <ol>
+                            <li><a href="http://webpjs.appspot.com/js/webpjs-0.0.2.min.js" target="_blank">webpjs-0.0.2.min.js</a></li>
+                            <li><a href="http://webpjs.appspot.com/js/webpjs-0.0.2.swf" target="_blank">webpjs-0.0.2.swf</a></li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h3>步骤2 - 在页头引入JS</h3>
+                        <pre>
+                            <code data-trim>
+                            <script>(function(){var WebP=new Image();WebP.onload=WebP.onerror=function(){
+if(WebP.height!=2){var sc=document.createElement('script');sc.type='text/javascript';sc.async=true;
+var s=document.getElementsByTagName('script')[0];sc.src='js/webpjs-0.0.2.min.js';s.parentNode.insertBefore(sc,s);}};
+WebP.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();</script>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>WebPJS的优缺点</h3>
+                        <ul>
+                            <li>借助flash让所有浏览器兼容webp</li>
+                            <li>只需要一套webp图片</li>
+                            <li>需要引入额外的2个文件，共计<em class="hl">100+KB</em>...</li>
+                            <li>利用flash在客户端进行解码，<em class="hl">渲染性能有点慢</em></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>WebPJS是不是银弹,客官自行判断</h3>
+                    </section>
+                </section>
+
+				<section>
+					<h2>小结</h2>
+				    <ul>
+                        <li>webp的优点和应用情况</li>
+                        <li>webp的兼容性</li>
+                        <li>如何在网页中按需加载webp图片</li>
+                        <li>如何让所有浏览器兼容webp - WebPJS</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>结束了</h2>
+                    <h2 class="fragment">么？</h2>
+                </section>
+                <section>
+                    <section>
+                        <h2>聊聊webp的性能</h3>
+                    </section>
+                    <section>
+                        <h3>有人说</h3>
+                        <ol style="margin-bottom:30px;">
+                            <li>编码(Encode)速度比JPG慢大约<em class="hl">10倍</em></li>
+                            <li>解码(Decode)速度比JPG慢大约<em class="hl">1.4倍</em></li>
+                        </ol>
+                        <blockquote style="font-size:80%;" cite="http://www.tuicool.com/articles/FFZ73y">数据参考自:<a href="http://www.tuicool.com/articles/FFZ73y" target="_blank">Faster, smaller and more beautiful web with WebP</a></blockquote>
+                    </section>
+                    <section>
+                        <h3>解码慢1.4倍,对页面渲染影响大不大?</h3>
+                    </section>
+                    <section>
+                        <h3>我们来做一个对比测试</h3>
+                        <ul style="margin-bottom:20px;" class="fragment">
+                        <li>页面1(59张 JPG):<a href="http://faso.me/lazypic/jpg.html" target="_blank">faso.me/lazypic/jpg.html</a></li>
+                        <li>页面2(59张WEBP):<a href="http://faso.me/lazypic/webp.html" target="_blank">faso.me/lazypic/webp.html</a></li>
+                        </ul>
+                        <p class="fragment">测试环境：webpagetest.org, android4.4, 3G网速</p>
+                    </section>
+                    <section>
+                        <h3>尺寸对比(WEBP比JPG小45%+)</h3>
+                        <img src="img/bytes-mobi.png" alt="bytes"/>
+                    </section>
+                    <section>
+                        <h3>渲染速度(WEBP胜)</h3>
+                        <video data-autoplay src="img/video-mobi.mp4"></video>
+                    </section>
+                    <section>
+                        <h3>说明什么问题?</h3>
+                        <ul>
+                            <li>尽管webp解码速度比JPG慢1.4陪,但实际<em class="hl">渲染速度不慢</em></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>One more thing</h2>
+                    </section>
+                    <section>
+                        <h3>3个小工具</h3>
+                    </section>
+                    <section>
+                        <h3>1. grunt-webp</h3>
+                        <p>一个将普通图片转换成webp图片的nodejs包</p>
+                        <img src="img/qrcode-grunt-webp.png" alt="grunt-webp"/>
+                    </section>
+                    <section>
+                        <h3>一个命令</h3>
+                        <pre>
+                        <code data-trim>
+grunt webp                        
+                        </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>蜀黍</h3>
+                        <h3>有没有GUI工具啊</h3>
+                    </section>
+                    <section>
+                        <h3>2. 智图(zhitu)</h3>
+                        <p>来自<a href="http://isux.tencent.com" target="_blank">腾讯ISUX前端团队</a>的图片优化平台:<a href="http://zhitu.tencent.com" alt="zhitu">zhitu.tencent.com</a></p>
+                        <a href="http://zhitu.tencent.com" target="_blank"><img src="img/zhitu.png" alt="zhitu.tencent.com"/></a>
+                    </section>
+                    <section>
+                        <h3>薯薯</h3>
+                        <h3>有没有按需加载webp图片滴JS组件啊</h3>
+                    </section>
+                    <section>
+                        <h3>3. LazyPic.JS</h3>
+                        <p>一个支持webp图片的延迟加载组件</p>
+                        <img src="img/qrcode-lazypic.png" alt="lazypic.js"/>
+                    </section>
+                    <section>
+                        <h3>半行代码</h3>
+                        <pre>
+                        <code data-trim>
+new LazyPic();                        
+                        </code>
+                        </pre>
+                        <p>
+                        <iframe src="//ghbtns.com/github-btn.html?user=mamboer&amp;repo=lazypic&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+                        </p>
+                    </section>
+                </section>
+			    <section>
+                    <h2>欢迎参与试用与交流</h2>
+                </section>
+				<section>
+					<h1>THE END</h1>
+					<h3>BY LV / Faso.me</h3>
+				</section>
+                <section>
+					<h2>参考资料</h2>
+					<blockquote cite="http://webpjs.appspot.com/">
+						&ldquo;WebPJS - Google's new image format WebP for not supported browsers (with alpha-channel)&rdquo;
+					</blockquote>
+					<blockquote cite="https://github.com/sorrycc/webp-support">
+						&ldquo;Script to feature detect if browser support WebP.&rdquo;
+					</blockquote>
+
+					<blockquote cite="https://www.npmjs.org/package/grunt-webp">
+						&ldquo;grunt-webp&rdquo;
+					</blockquote>
+
+					<blockquote cite="http://faso.me/lazypic">
+						&ldquo;LazyPic.JS&rdquo;
+					</blockquote>
+
+					<blockquote cite="http://zhitu.tencent.com">
+						&ldquo;智图(zhitu)&rdquo;
+					</blockquote>
+				    <blockquote cite="http://www.webpagetest.org/video/compare.php?tests=141121_NG_6MW,141121_N5_4ZH">
+                        &ldquo;<a href="http://www.webpagetest.org/video/compare.php?tests=141121_NG_6MW,141121_N5_4ZH" target="_blank">渲染速度对比测试(webpagetest.org)</a>&rdquo;
+                    </blockquote>
+
+				    <blockquote cite="http://www.webpagetest.org/video/compare.php?tests=141121_3W_JT7,141121_6Q_JSM">
+                        &ldquo;<a href="http://www.webpagetest.org/video/compare.php?tests=141121_3W_JT7,141121_6Q_JSM" target="_blank">渲染速度对比测试-手机端(webpagetest.org)</a>&rdquo;
+                    </blockquote>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="../../assets/revealjs/lib/js/head.min.js"></script>
+		<script src="../../assets/revealjs/js/reveal.min.js"></script>
+<script src="http://gz.zat.cc:3001/socket.io/socket.io.js"></script>
+		<script>
+            var rvRoot = "../../assets/revealjs/";
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				//parallaxBackgroundImage: 'img/reveal-parallax-2.jpg',
+				//parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: rvRoot+'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: rvRoot+'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: rvRoot+'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: rvRoot+'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: rvRoot+'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: rvRoot+'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+//客户端接收数据
+    var socket = io.connect('http://gz.zat.cc:3001');
+    socket.on('connect', function () {
+        socket.on('message', function(data) {
+            //play(data.join(','));//处理幻灯片进度
+            var t = data;
+            if(t.length > 2) {
+                Reveal.slide(t[0], t[1], t[2]);
+            } else {
+                Reveal.slide(t[0], t[1]);
+            }
+        });
+    });
+
+		</script>
+
+	</body>
+</html>
