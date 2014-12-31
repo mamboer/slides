@@ -314,6 +314,14 @@ git clone https://github.com/tgideas/motion.git
                         <h3>clone之后的3颗『树』</h3>
                         <img src="http://xtutor.github.io/githuber/assets/img/tree.png" alt="tree" />
                         <p>项目拷贝本地后，其文件结构由Git维护的三颗『树』组成</p>
+                        <aside class="notes">
+                            第一个是你的 工作目录，它持有实际文件；<br/>
+                            第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；<br/>
+                            最后是 HEAD，它指向你最后一次提交的结果。<br/>
+                            commit之前，所有的操作均作用在工作目录和暂存区。<br/>
+                        而push操作显然作用在HEAD区域。
+                        </aside>
+
                     </section>
                     <section>
                         <h3>2. checkout</h3>
