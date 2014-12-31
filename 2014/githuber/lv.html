@@ -655,7 +655,9 @@ git push origin gh-pages
 		<script src="../../assets/revealjs/js/reveal.min.js"></script>
 <script src="http://gz.zat.cc:3001/socket.io/socket.io.js"></script>
 		<script>
+            var socket = io.connect('http://gz.zat.cc:3001');
             var rvRoot = "../../assets/revealjs/";
+
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -681,18 +683,32 @@ git push origin gh-pages
 					{ src: rvRoot+'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-//客户端接收数据
-    var socket = io.connect('http://gz.zat.cc:3001');
-    socket.on('connect', function () {
-        socket.on('message', function(data) {
-            //play(data.join(','));//处理幻灯片进度
-            var t = data;
-            if(t.length > 2) {
-                Reveal.slide(t[0], t[1], t[2]);
-            } else {
-                Reveal.slide(t[0], t[1]);
-            }
-        });
+
+
+    /**
+     * ppt 更换的时候，发送套接字
+     */
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+        var arr = [event.indexh, event.indexv];
+        socket.send(arr);
+    });
+
+    /**
+     * ppt 单页有步骤的时候，发送套接字
+     */
+    Reveal.addEventListener( 'fragmentshown', function( event ) {
+        var indexf = $(event.fragment).data('fragment-index') + 1;
+        var arr = [Reveal.getIndices().h, Reveal.getIndices().v, indexf];
+        socket.send(arr);
+    });
+
+    /**
+     * ppt 单页有步骤的时候，回退发送套接字
+     */
+    Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        var indexf = $(event.fragment).data('fragment-index');
+        var arr = [Reveal.getIndices().h, Reveal.getIndices().v, indexf];
+        socket.send(arr);
     });
 
 		</script>
