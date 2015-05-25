@@ -525,6 +525,7 @@ new LazyPic();
     Reveal.addEventListener( 'fragmentshown', function( event ) {
         var indexf = $(event.fragment).data('fragment-index') + 1;
         var arr = [Reveal.getIndices().h, Reveal.getIndices().v, indexf];
+        console.log(arr.join('-'));
         socket.send(arr);
     });
 
