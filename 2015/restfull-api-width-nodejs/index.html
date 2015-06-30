@@ -364,7 +364,7 @@ $ npm install loopback-connector-mongodb --save
 
         <script src="../../assets/revealjs/lib/js/head.min.js"></script>
         <script src="../../assets/revealjs/js/reveal.min.js"></script>
-        <script src="http://gz.zat.cc:3001/socket.io/socket.io.js"></script>
+        <script src="http://sk.fex.im/socket.io/socket.io.js"></script>
         <script>
             var rvRoot = "../../assets/revealjs/";
             // Full list of configuration options available here:
@@ -388,12 +388,12 @@ $ npm install loopback-connector-mongodb --save
                     { src: rvRoot+'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: rvRoot+'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: rvRoot+'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: rvRoot+'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: rvRoot+'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    { src: rvRoot+'plugin/zoom-js/zoom.js', async: true },
+                    { src: rvRoot+'plugin/notes/notes.js', async: true }
                 ]
             });
             //客户端接收数据
-            var socket = io.connect('http://gz.zat.cc:3001');
+            var socket = io.connect('http://sk.fex.im');
             socket.on('connect', function () {
                 socket.on('message', function(data) {
                     //play(data.join(','));//处理幻灯片进度
