@@ -35,5 +35,9 @@
   "Trace": {
     "dataSource": "db",
     "public": true
+  },
+  "Test": {
+    "dataSource": "dbMongo",
+    "public": true
   }
 }

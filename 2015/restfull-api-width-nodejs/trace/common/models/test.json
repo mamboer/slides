@@ -1,25 +1,18 @@
 {
-  "name": "Trace",
+  "name": "Test",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "url": {
+    "field1": {
       "type": "string",
       "required": true
     },
-    "title": {
+    "field2": {
       "type": "string",
       "required": true
-    },
-    "createdAt": {
-      "type": "date",
-      "required": true
-    },
-    "test": {
-      "type": "string"
     }
   },
   "validations": [],
