@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8"/>
+    <head>
+        <meta charset="utf-8"/>
 
-		<title>FASO - G4MAY1</title>
+        <title>FASO - RESTFull Web API With NodeJS</title>
 
-		<meta name="description" content="重构4组2015年5月中旬例会"/>
-		<meta name="author" content="FASO.ME"/>
+        <meta name="description" content="Implementing A RESTFull Web API With NodeJS In 3 Minutes"/>
+        <meta name="author" content="FASO.ME"/>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-		<link rel="stylesheet" href="../../assets/common/css/font-Limelight.css"/>
+        <link rel="stylesheet" href="../../assets/common/css/font-Limelight.css"/>
         <link rel="stylesheet" href="../../assets/revealjs/css/reveal.min.css"/>
-		<link rel="stylesheet" href="../../assets/revealjs/css/theme/simple.css" id="theme"/>
+        <link rel="stylesheet" href="../../assets/revealjs/css/theme/simple.css" id="theme"/>
         <link rel="stylesheet" href="../../assets/common/css/table.css"/>
         <style>
             /*.reveal {font-family:"Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;}*/
@@ -32,7 +32,7 @@
             .logo{border-radius:50%;}
             .img-nobd {border:none !important;}
             .img-noshadow {box-shadow:none !important;}
-            .lite-img img{border:none!important;box-shadow:none!important;}
+            .lite-img img{border:none!important;box-shadow:none!important;background: transparent!important;}
             .reveal .h3-badage{margin-right:10px;display:inline-block;width:80px;height:80px;line-height:80px;text-align:center;border-radius:50%;border:4px solid #333;box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);}
             .reveal .h4-badage{margin-right:8px;display:inline-block;width:60px;height:60px;line-height:60px;text-align:center;border-radius:50%;border:3px solid #333;box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);}
             .reveal .h4-badage1 {width:auto;padding-left:5px;padding-right:5px;border-radius:2px;}
@@ -42,270 +42,356 @@
             .slide-alignr pre{margin-right:0;}
             .slide-alignr {text-align:right!important;}
             .slide-alignc {text-align:center!important;}
-
-            @media only screen and (max-width:640px) {
-                .reveal aside.notes {
-                    height:233px;
-                    display: block;
-                    width: 100%;
-                    background-color: #000;
-                    padding: 15px;
-                    position: absolute;
-                    bottom:0;
-                    margin-bottom: -300px;
-                    width: 100%;
-                    background-color: #000;
-                    padding: 15px;
-                    }
-            } 
-
         </style>
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = '../../assets/revealjs/css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../../assets/revealjs/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="../../assets/revealjs/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="../../assets/revealjs/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
                 <section class="slide-alignc">
                     <section class="lite-img">
-                    <img src="img/g4.png" alt="githuber" width="250" height="250" class="logo"/>
-					<h1>MEETING</h1>
-                    </section>
-				</section>
-                <section>
-                    <h2>Agenda</h2>
-                    <ol>
-                        <li><p><a href="#/2">新同学</a></p></li>
-                        <li><p><a href="#/3">公关传播知多少</a></p></li>
-                        <li><p><a href="#/4">一枚小测试</a></p></li>
-                        <li><p><a href="#/5">工作汇报</a></p></li>
-                    </ol>
-                </section>
-                <section>
-                    <section class="lite-img slide-alignc">
-                        <h2>SUZ.HUANG</h2>
-                        <img src="img/45th-anniversary-of-the-publishing-of-barbapapa-5112521539190784-hp.gif" alt="Newbie is welcome" />
+                        <img src="img/logo.png" alt="nodejs" class=""/>
+                        <h2>30分钟开发入门</h2>
                     </section>
                 </section>
-				<section>
-                    <section class="slide-alignc">
-                        <h2>JURI && CC</h2>
-                        <p>"公关与传播"</p>
+                <section>
+                    <section class="lite-img">
+                        <h2>Targets</h2>
+                        <p>学会利用NodeJS开发后台的数据接口</p>
                     </section>
-                    <section class="lite-img slide-alignc">
-                        <h3>"我们都是BAYMAX"</h3>
-                        <img src="img/baymax1.png" alt="大白"/>
+                    <section class="lite-img">
+                        <h2>WTF</h2>
+                        <pre>
+                        <code data-trim>
+$.ajax({
+    "url":"今天就是要弄这货！开发哥给的所谓的CGI接口！"
+});
+                        </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>Practice</h2>
+                        <p>开发一套统计页面PV的API</p>
+                        <aside class="notes">
+                            PV统计的逻辑其实灰常简单，就是在页面加载的时候将页面的URL，标题，加载时候的时间戳等等保存到数据库。然后通过数据汇总的方式，算出某一天或者一个时间段内的PV。
+                        </aside>
+                    </section>
+                    <section class="lite-img">
+                        <h2>Flow</h2>
+                        <div style="background:#000">
+                        <img src="img/flow.png" alt="flow"/>
+                        </div>
+                    </section>
+                    <section class="lite-img">
+                        <h2>DB First</h2>
+                        <div style="background:#000">
+                        <img src="img/flow1.png" alt="flow"/>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>Step1 安装MongoDB</h2>
+                        <pre>
+                        <code data-trim>
+# mac
+brew update
+brew install mongodb
+                        </code>
+                        </pre>
+                        <ul>
+                            <li>MAC安装：/mamboer/mac/wiki/mongodb</li>
+                            <li>Windows安装：问度娘</li>
+                        </ul>
                     </section>
                     <section>
-                        <ul>
-                        <li>
-                            缺男人么?
-                        </li>
-                        <li>
-                            你们会从什么角度去包装一个营销事件，有没有什么创意思路的方法论或者技巧可以分享?
-                        </li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">D</span>
-                            <span class="h4-badage">G</span>
-                        </h4>
-                    </section>
-                     <section>
-                        <ul>
-                        <li>
-                            工作内容是什么?
-                        </li>
-                        <li>考核指标是什么?</li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage h4-badage1">七宝</span>
-                            <span class="h4-badage h4-badage1">SHINE</span>
-                        </h4>
+                        <h3>验证MongoDB</h3>
+                        <pre>
+                        <code data-trim>
+mongo
+                        </code>
+                        </pre>
+                        <pre>
+                        <code data-trim>
+MongoDB shell version: 3.0.2
+connecting to: test
+> 
+                        </code>
+                        </pre>
                     </section>
                     <section>
-                        <ul>
-                        <li>
-                            媒介和公关和外部媒体的关系是怎样的?
-                        </li>
-                        <li>如果发生公关事件，一般会怎么操作？</li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">K</span>
-                            <span class="h4-badage">I</span>
-                            <span class="h4-badage">M</span>
-                            <span class="h4-badage">I</span>
-                        </h4>
+                        <h3>数据库和表的设计？</h3>
+                        <p>跳过！！！</p>
                     </section>
-                    <section>
-                        <ul>
-                        <li>
-                            对外部的传播效率数据是如何收集分析的呢?
-                        </li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">p</span>
-                            <span class="h4-badage">i</span>
-                            <span class="h4-badage">g</span>
-                            <span class="h4-badage">g</span>
-                            <span class="h4-badage">y</span>
-                        </h4>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>Step2 秘密武器</h2>
+                        <p>
+                        <img src="img/strongloop.png" alt="strongloop"/>
+                        </p>
+                        <p><span style="color:#719430;font-size:40px;">LoopBack Framework</span></p>
                     </section>
-                    <section>
+                    <section class="lite-img">
+                        <h3>什么鬼东西</h3>
                         <ul>
-                        <li>
-                            你们平时都玩什么游戏? 能拉我一起么?
-                        </li>
+                            <li>一个组织，expressjs框架的主要赞助者</li>
+                            <li>一个工具，利用loopback框架快速创建数据库、表和WebAPI</li>
+                            <li>loopback是利用nodejs快速搭建web api的框架</li>
                         </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">花</span>
-                            <span class="h4-badage">花</span>
-                        </h4>
                     </section>
-                    <section>
-                        <ul>
-                        <li>
-                            你们和我们工作的交集部分表现在什么地方?
-                        </li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">文</span>
-                            <span class="h4-badage">子</span>
-                        </h4>
+                    <section class="lite-img">
+                        <h3>安装strongloop</h3>
+                        <pre>
+                        <code data-trim>
+$ npm install -g strongloop
+                        </code>
+                        </pre>
                     </section>
-                    <section>
-                        <ul>
-                        <li>
-                            工作面临什么压力? 怎么去减压?
-                        </li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">世</span>
-                            <span class="h4-badage">松</span>
-                        </h4>
-                    </section>
-                    <section>
-                        <ul>
-                        <li>
-                            关于雷霆战机一周年，整个项目是大概在雷霆战机一周年提前多久开始启动的?
-                        </li>    
-                        <li>走进科学，微博事件这种一般需要的提前制作的周期大概是多久?</li>
-                        </ul>
-                        <h4 class="slide-alignr mt-20">
-                            <span class="h4-badage">明</span>
-                            <span class="h4-badage">恋</span>
-                            <span class="h4-badage">七</span>
-                            <span class="h4-badage">宝</span>
-                        </h4>
-                    </section>
-				</section>
+                    <section class="lite-img">
+                        <h3>创建loopback app</h3>
+                        <pre>
+                        <code data-trim>
+$ slc loopback
+                        </code>
+                        </pre>
+                        <pre>
+                        <code data-trim>
+   _-----_
 
-				<section class="lite-img">
-					<section class="slide-alignc">
-                        <h2>MBTI性格分析</h2>
-					</section>
-                    <section>
-                        <h3>
-                        Myers-Briggs Type Indicator
-                        </h3>
-                        <p>是一种性格测试工具，用以衡量和描述人们在获取信息、作出决策、对待生活等方面的心理活动规律和性格类型</p>
+    |       |    .--------------------------.
+    |--(o)--|    |  Let's create a LoopBack |
+   `---------´   |       application!       |
+    ( _´U`_ )    '--------------------------'
+    /___A___
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
+[?] What's the name of your application? trace
+[?] Enter name of the directory to contain the project: trace
+                        </code>
+                        </pre>
                     </section>
-					<section>
-                        <h3>定位</h3>
-                        <ol>
-                            <li>你愿意出去找乐子(<em class="hl">E</em>)</li>
-                            <li>或者你宁愿呆在家里读一本好书或看电视吗？(<em class="hl">I</em>)</li>
-                        </ol>
-					</section>
                     <section>
-                        <h3>悟性</h3>
-                        <ol>
-                            <li>当你学习新东西时，你是所见即所学(<em class="hl">S</em>)</li>
-                            <li>或根据自己的直觉分析并产生印象？(<em class="hl">N</em>)</li>
-                        </ol>
-					</section>
-					<section>
-                        <h3>决定</h3>
-                        <ol>
-                            <li>当你对某件事作出决定时，你依靠逻辑推理(<em class="hl">T</em>)</li>
-                            <li>还是倾向于情感和直觉？(<em class="hl">F</em>)</li>
-                        </ol>
-					</section>
-                    <section>
-                        <h3>态度</h3>
-                        <ol>
-                            <li>你愿意自己生活的各个方面都井井有条，预先安排(<em class="hl">J</em>)</li>
-                            <li>还是喜欢突如其来的惊喜？(<em class="hl">P</em>)</li>
-                        </ol>
-					</section>
-                    <section class="slide-alignc">
-                        <h3>MBTI - 测试结果</h3>
-                        <img src="img/mbti-qrcode.png" alt="mbti"/>
+                        <h3>创建数据表:trace</h3>
+                        <pre>
+                        <code data-trim>
+$ cd trace
+$ slc loopback:model
+                        </code>
+                        </pre>
+                        <pre>
+                        <code data-trim>
+? Enter the model name: Trace
+? Select the data-source to attach Trace to: db (memory)
+? Select model's base class: PersistedModel
+? Expose Trace via the REST API? Yes
+? Custom plural form (used to build REST URL): 
+Let's add some Trace properties now.
+                        </code>
+                        </pre>
                     </section>
-				</section>
+                    <section>
+                        <h3>创建表的字段</h3>
+                        <p>url、title、createdAt</p>
+                        <pre>
+                        <code data-trim>
+Enter an empty property name when done.
+? Property name: url
+   invoke   loopback:property
+? Property type: string
+? Required? Yes
 
-				<section class="lite-img">
-					<section class="slide-alignc">
-                        <h2>"工作汇报"</h2>
-                    </section>
-				</section>
+Let's add another Trace property.
+Enter an empty property name when done.
+? Property name: title
+   invoke   loopback:property
+? Property type: string
+? Required? Yes
 
+Let's add another Trace property.
+Enter an empty property name when done.
+? Property name: createdAt
+   invoke   loopback:property
+? Property type: date
+? Required? Yes
+                        </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>运行app</h3>
+                        <pre>
+                        <code data-trim>
+$ node .
+
+Browse your REST API at http://0.0.0.0:3000/explorer
+Web server listening at: http://0.0.0.0:3000/
+                        </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>查看app的api</h3>
+                        <p>浏览器打开<a href="http://localhost:3000/explorer" target="_blank">localhost:3000/explorer</a></p>
+                    </section>
+                    <section class="lite-img">
+                        <h3>齐全的api</h3>
+                        <img src="img/StrongLoop_API_Explorer.png" alt="StrongLoop_API_Explorer"/>
+                    </section>
+                    <section class="lite-img">
+                        <h3>api说明及测试方法</h3>
+                        <img src="img/api-spec.png" alt="api-spec"/>
+                    </section>
+                    <section class="lite-img">
+                        <h3>可扩展的loopback项目源码</h3>
+                        <img src="img/files.png" alt="files"/>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>HOW - 如果扩展?</h2>
+                        <ol>
+                            <li>添加MongoDB数据源</li>
+                            <li>为Trace表添加字段</li>
+                            <li>新增表Test</li>
+                        </ol>
+                    </section>
+                    <section class="lite-img">
+                        <h3>添加MongoDB数据源</h3>
+                        <p>修改datasources.json</p>
+                        <pre>
+                        <code data-trim>
+"dbMongo": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "traceDs",
+    "name": "db",
+    "connector": "mongodb"
+}                        
+                        </code>
+                        </pre>
+                        <pre>
+                        <code data-trim>
+$ npm install loopback-connector-mongodb --save                        
+                        </code>
+                        </pre>
+                    </section>
+                    <section class="lite-img">
+                        <h3>为Trace表添加字段</h3>
+                        <p>修改models/trace.json</p>
+                        <pre>
+                        <code data-trim>
+"test": {
+    "type": "string"
+}                       
+                        </code>
+                        </pre>
+                    </section>
+                    <section class="lite-img">
+                        <h3>新增表Test</h3>
+                        <ol>
+                            <li>复制修改models/trace.json</li>
+                            <li>在model-config.json里添加配置</li>
+                        </ol>
+                        <pre>
+                        <code data-trim>
+"Test": {
+    "dataSource": "dbMongo",
+    "public": true
+}                       
+                        </code>
+                        </pre>
+                    </section>
+                    
+                </section>
+                <section>
+                    <h2>到此为止</h2>
+                    <ul>
+                        <li>学会安装MongoDB</li>
+                        <li>了解Strongloop和Loopback</li>
+                        <li>学会利用Strongloop创建Loopback项目</li>
+                        <li>学会使用Loopback项目生成的WebAPI</li>
+                        <li>学会创建表、修改表</li>
+                        <li>学会切换数据源</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>NodeJS开发不止如此</h2>
+                    <ul>
+                        <li>客户端开发（Node Webkit）</li>
+                        <li>网站开发（ExpressJS）</li>
+                        <li>组件开发（npmjs.com）</li>
+                        <li>通用的编程思想（OO、MVC、MVVM）</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Anyway</h2>
+                    <p>会JS ≈ 会NodeJS ≈ 会开发</p>
+                </section>
+                <section class="lite-img slide-alignc">
+                    <img src="img/logo.jpg" alt="FSD" />
+                    <h2>Full Stack Developer</h2>
+                    <p>每个前端都有变身全栈攻城狮的机会</p>
+                </section>
                 <section class="slide-alignc">
-					<h1>THE END</h1>
-					<h3>BY LV / Faso.me</h3>
-				</section>
+                    <h1>THE END</h1>
+                    <h3>BY LV / Faso.me</h3>
+                </section>
             </div>
 
-		</div>
+        </div>
 
-		<script src="../../assets/revealjs/lib/js/head.min.js"></script>
-		<script src="../../assets/revealjs/js/reveal.min.js"></script>
+        <script src="../../assets/revealjs/lib/js/head.min.js"></script>
+        <script src="../../assets/revealjs/js/reveal.min.js"></script>
         <script src="http://gz.zat.cc:3001/socket.io/socket.io.js"></script>
-		<script>
+        <script>
             var rvRoot = "../../assets/revealjs/";
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+                theme: Reveal.getQueryHash().theme || 'black', // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Parallax scrolling
-				//parallaxBackgroundImage: 'img/reveal-parallax-2.jpg',
-				//parallaxBackgroundSize: '2100px 900px',
+                // Parallax scrolling
+                //parallaxBackgroundImage: 'img/reveal-parallax-2.jpg',
+                //parallaxBackgroundSize: '2100px 900px',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: rvRoot+'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: rvRoot+'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: rvRoot+'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: rvRoot+'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: rvRoot+'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: rvRoot+'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: rvRoot+'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: rvRoot+'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: rvRoot+'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: rvRoot+'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: rvRoot+'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: rvRoot+'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
             //客户端接收数据
             var socket = io.connect('http://gz.zat.cc:3001');
             /**
@@ -334,7 +420,7 @@
                 socket.send(arr);
             });
 
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
