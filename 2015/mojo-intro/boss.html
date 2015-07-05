@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>FASO - RESTFull Web API With NodeJS</title>
+
+        <meta name="description" content="Implementing A RESTFull Web API With NodeJS In 3 Minutes"/>
+        <meta name="author" content="FASO.ME"/>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+        <link rel="stylesheet" href="../../assets/common/css/font-Limelight.css"/>
+        <link rel="stylesheet" href="../../assets/revealjs/css/reveal.min.css"/>
+        <link rel="stylesheet" href="../../assets/revealjs/css/theme/simple.css" id="theme"/>
+        <link rel="stylesheet" href="../../assets/common/css/table.css"/>
+        <style>
+            /*.reveal {font-family:"Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;}*/
+            .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{font-family:'Limelight';}
+            .reveal h1{margin-bottom:50px;}
+            .reveal h2{margin-bottom:40px;}
+            .reveal h3{margin-bottom:25px;}
+            .reveal pre code{padding:10px;}
+            .reveal li{margin-bottom:5px;}
+            .red{background:rgb(223, 117, 20) !important;color:#fff !important;}
+            .green{background:rgb(28, 184, 65) !important;color:#fff !important;}
+            .reveal .hl {color:#e91e63;font-size:105%;font-style:normal;font-weight:500;}
+            .logo{border-radius:50%;}
+            .img-nobd {border:none !important;}
+            .img-noshadow {box-shadow:none !important;}
+            .lite-img img{border:none!important;box-shadow:none!important;background: transparent!important;}
+            .reveal .h3-badage{margin-right:10px;display:inline-block;width:80px;height:80px;line-height:80px;text-align:center;border-radius:50%;border:4px solid #333;box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);}
+            .reveal .h4-badage{margin-right:8px;display:inline-block;width:60px;height:60px;line-height:60px;text-align:center;border-radius:50%;border:3px solid #333;box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);}
+            .reveal .h4-badage1 {width:auto;padding-left:5px;padding-right:5px;border-radius:2px;}
+            .reveal .slides{text-align:left;}
+            .reveal pre{margin-left:0;}
+            .mt-20 {margin-top:20px !important;}
+            .slide-alignr pre{margin-right:0;}
+            .slide-alignr {text-align:right!important;}
+            .slide-alignc {text-align:center!important;}
+        </style>
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../assets/revealjs/lib/css/zenburn.css"/>
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../../assets/revealjs/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="../../assets/revealjs/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section class="slide-alignc">
+                    <section class="lite-img">
+                        <img src="img/logo.png" alt="nodejs" class="logo"/>
+                        <h2>10分钟广告</h2>
+                    </section>
+                </section>
+                <section class="slide-alignc">
+                    <section class="lite-img">
+                        <h1>MOJO</h1>
+                    </section>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>What</h2>
+                        <p>一个HTML5专题页面的可视化制作平台</p>
+                        <img src="img/mojo-solution1.png" alt="mojo"/>
+                    </section>
+                    <section class="lite-img">
+                        <h3>
+                            LIVE APP
+                        </h3>
+                        <img src="img/liveapp.png" alt="live app"/>
+                    </section>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>Scenes</h2>
+                        <p>适用于无后台业务逻辑的HTML5专题</p>
+                        <img src="img/demo1.png" alt="招聘函"/>
+                        <img src="img/demo2.png" alt="品牌推广">
+                    </section>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>Features</h2>
+                        <ul>
+                            <li>常用的UI组件（如文字、图片）</li>
+                            <li>专题模板（陆续添加ing）</li>
+                            <li>页面模板（陆续添加ing）</li>
+                            <li>丰富的动画效果</li>
+                            <li class="green">多设备模拟预览</li>
+                            <li class="red">业务发布功能（发布至WebPlat）</li>
+                            <li>源码下载，方便二次开发</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section class="lite-img">
+                        <h2>Show Time</h2>
+                        <p>百闻不如一见，百见不如一用！</p>
+                    </section>
+                    <section>
+                        <h2><a href="http://mojo.oa.com" target="_blank">mojo.oa.com</a></h2>
+                    </section>
+                </section>
+                <section class="lite-img slide-alignc">
+                    <h2>MOJO V2.5.0 版本预告</h2>
+                    <ul>
+                        <li>7月25日</li>
+                        <li>支持带后台数据逻辑的组件</li>
+                        <li>支持流布局页面（非滚屏页面）</li>
+                        <li>根据用户反馈进行体验优化</li>
+                    </ul>
+                </section>
+                <section class="slide-alignc">
+                    <h1>THE END</h1>
+                    <h3>BY LV / Faso.me</h3>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="../../assets/revealjs/lib/js/head.min.js"></script>
+        <script src="../../assets/revealjs/js/reveal.min.js"></script>
+        <script src="http://sk.fex.im/socket.io/socket.io.js"></script>
+        <script>
+            var rvRoot = "../../assets/revealjs/";
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme || 'black', // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                //parallaxBackgroundImage: 'img/reveal-parallax-2.jpg',
+                //parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: rvRoot+'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: rvRoot+'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: rvRoot+'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: rvRoot+'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: rvRoot+'plugin/zoom-js/zoom.js', async: true },
+                    { src: rvRoot+'plugin/notes/notes.js', async: true }
+                ]
+            });
+            //客户端接收数据
+            var socket = io.connect('http://sk.fex.im');
+            /**
+             * ppt 更换的时候，发送套接字
+             */
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                var arr = [event.indexh, event.indexv];
+                socket.send(arr);
+            });
+
+            /**
+             * ppt 单页有步骤的时候，发送套接字
+             */
+            Reveal.addEventListener( 'fragmentshown', function( event ) {
+                var indexf = $(event.fragment).data('fragment-index') + 1;
+                var arr = [Reveal.getIndices().h, Reveal.getIndices().v, indexf];
+                socket.send(arr);
+            });
+
+            /**
+             * ppt 单页有步骤的时候，回退发送套接字
+             */
+            Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                var indexf = $(event.fragment).data('fragment-index');
+                var arr = [Reveal.getIndices().h, Reveal.getIndices().v, indexf];
+                socket.send(arr);
+            });
+
+        </script>
+
+    </body>
+</html>
